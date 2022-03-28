@@ -75,6 +75,9 @@ exports.getUsers = (req, res) => {
   db.query(sqlStr, (err, results) => {
     if(err) return res.sd(err)
     console.log(results);
-    res.sd('查询成功！')
+    res.send({
+      status:0,
+      message:'查询成功！'
+    })
   })
 }
