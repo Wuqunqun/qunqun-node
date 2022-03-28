@@ -64,20 +64,27 @@ exports.getInfo = (req, res) => {
   //  console.log(req.user)
   res.send({
     status: 0,
-    name: req.user.username+' 大人',
+    name: req.user.username + ' 大人',
     message: '用户信息获取成功',
     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif'
+  })
+}
+
+exports.logout = (req, res) => {
+  res.send({
+    status: 0,
+    message:'退出成功'
   })
 }
 
 exports.getUsers = (req, res) => {
   const sqlStr = 'select * from users'
   db.query(sqlStr, (err, results) => {
-    if(err) return res.sd(err)
+    if (err) return res.sd(err)
     console.log(results);
     res.send({
-      status:0,
-      message:'查询成功！'
+      status: 0,
+      message: '查询成功！'
     })
   })
 }
