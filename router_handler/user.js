@@ -65,7 +65,7 @@ exports.getInfo = (req, res) => {
   res.send({
     status: 0,
     name: req.user.username + ' 大人',
-    message: '用户信息获取成功',
+    // message: '用户信息获取成功',
     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif'
   })
 }
